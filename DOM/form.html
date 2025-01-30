@@ -1,0 +1,31 @@
+<html>
+
+<script>
+    function show(){
+        const x=document.getElementsByClassName("Login").length;
+        const y=document.getElementById("Lname").value;
+        document.getElementById("para").innerHTML="Found "+x+" elements in the form Last name entered is:"+y;
+    //paragraph created via dom
+    const para=document.createElement("p")
+    para.innerText="This page is created by Dom"
+    document.body.appendChild(para)
+    
+    }
+</script>
+   
+
+    <body>
+        <div >
+           FirstName:<input  type="text" class="Login" id="fname"><br><br>
+           LastName:<input  type="text" class="Login" id="Lname">
+        </div><br>
+        <button>submit</button><br><br>
+        
+        <p>Click the "Try it" button to display the number of elements int the form</p>
+        <br>
+        <button onclick="show()">Try it</button>
+        <p id="para"></p>
+</body>
+
+
+</html>

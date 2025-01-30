@@ -1,0 +1,26 @@
+<html>
+    <script>
+
+        async function getSI(){
+            const p=document.getElementsByClassName("pit")[0].value
+            const r=document.getElementsByClassName("pit")[1].value
+            const t=document.getElementsByClassName("pit")[2].value
+
+            const response=await fetch("https://sum-server.100xdevs.com/interest?principal="+p+ "&rate="+r+ "&time="+t)
+            const ans= await response.text()
+            document.getElementById("finalSI").innerHTML=ans
+            
+
+        }
+
+    </script>
+
+    <body>
+        <input class="pit" id="priciple" type="text" placeholder="Enter Principle"><br><br>
+        <input class="pit" id="rate" type="text" placeholder="Enter rate of interest"><br><br>
+        <input class="pit" id="time" type="text" placeholder="Enter duration"><br><br>
+        <button onclick="getSI()">calculate SI</button><br><br>
+        <div id="finalSI"></div>
+
+    </body>
+</html>
